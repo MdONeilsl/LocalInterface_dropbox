@@ -11,3 +11,4 @@ window.addEventListener('DOMContentLoaded', async () => {
         alert(`Startup failed:\n${error.message}`);
     }
 });
+

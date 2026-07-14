@@ -109,3 +109,4 @@ export class ApplicationRoot {
         renderer.render(store.getState());
     }
 }
+

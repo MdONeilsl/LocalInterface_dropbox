@@ -99,3 +99,4 @@ export class AppStore {
         StorageService.save(STORAGE_KEYS.LAST_MODEL, model);
     }
 }
+

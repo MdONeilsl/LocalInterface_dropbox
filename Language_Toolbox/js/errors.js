@@ -30,3 +30,4 @@ export class ConfigurationError extends AppError {
         super(message, 'CONFIG_ERROR');
     }
 }
+

@@ -63,3 +63,4 @@ export const PERSONALITIES = Object.freeze([
     "Eccentric", "Conventional", "Daring", "Cautious", "Curious",
     "Indifferent", "Obsessive", "Detached", "Sarcastic", "Witty"
 ]);
+

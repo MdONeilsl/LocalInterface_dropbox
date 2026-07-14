@@ -287,3 +287,4 @@ export class SettingsPersistence {
         this.dom.apiKey.addEventListener('change', handler);
     }
 }
+

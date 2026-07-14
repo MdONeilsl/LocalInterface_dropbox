@@ -49,9 +49,9 @@ export class RoleplayValidator {
         if (words > limits.max) {
             return { valid: false, reason: `Too long (${words})` };
         }
-        if (subjectName && this.#containsSubjectEmotion(output, subjectName)) {
-            return { valid: false, reason: 'Subject emotions detected' };
-        }
+        //if (subjectName && this.#containsSubjectEmotion(output, subjectName)) {
+        //    return { valid: false, reason: 'Subject emotions detected' };
+        //}
         return { valid: true, reason: '' };
     }
 
@@ -66,3 +66,4 @@ export class RoleplayValidator {
         return regex.test(output);
     }
 }
+
