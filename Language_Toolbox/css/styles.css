@@ -1,0 +1,265 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface-light: #0f3460;
+    --text: #eaeaea;
+    --accent: #e94560;
+    --border: #533483;
+    --radius: 6px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 1rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.main-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 0.25rem;
+}
+
+header h1 {
+    font-size: 1.6rem;
+    color: var(--accent);
+    letter-spacing: 1px;
+}
+
+/* panels */
+.panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.8rem;
+}
+
+.panel h2 {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.3rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.field {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    flex: 1 1 160px;
+    min-width: 140px;
+}
+
+.field label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    min-width: 4rem;
+}
+
+input,
+select,
+textarea {
+    background: var(--surface-light);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    font-size: 0.85rem;
+    padding: 0.4rem 0.5rem;
+    font-family: inherit;
+}
+
+input,
+select {
+    flex: 1;
+}
+
+/* Make all textareas stretch full width */
+textarea {
+    width: 100%;
+    resize: vertical;
+    min-height: 3.5rem;
+}
+
+.output-box {
+    background: #0d1117;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.75rem;
+    min-height: 6rem;
+    /* taller: ~5 lines */
+    white-space: pre-wrap;
+    font-family: 'Courier New', monospace;
+    word-break: break-word;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    overflow-y: auto;
+}
+
+.feedback-box {
+    background: #0d1117;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    white-space: pre-wrap;
+    max-height: 150px;
+    overflow-y: auto;
+    font-family: monospace;
+    margin-top: 0.5rem;
+}
+
+button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.1s;
+}
+
+button:hover:not(:disabled) {
+    background: #c73e54;
+    transform: scale(0.98);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.controls {
+    display: flex;
+    gap: 0.7rem;
+    margin: 0.3rem 0;
+}
+
+.output-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.status {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+}
+
+.status.online {
+    background: #2e7d32;
+    color: white;
+}
+
+.status.offline {
+    background: #555;
+    color: #ddd;
+}
+
+.note {
+    font-size: 0.7rem;
+    opacity: 0.75;
+    margin-top: 0.25rem;
+}
+
+.two-col {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.two-col>div {
+    flex: 1;
+    min-width: 180px;
+}
+
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.2rem;
+}
+
+.tab-btn {
+    background: var(--surface-light);
+    color: #ccc;
+    border: none;
+    padding: 0.4rem 1.2rem;
+    border-radius: var(--radius) var(--radius) 0 0;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+.tab-btn.active {
+    background: var(--accent);
+    color: white;
+    opacity: 1;
+}
+
+.tool-panel {
+    display: none;
+    animation: fade 0.2s ease;
+}
+
+.tool-panel.active-panel {
+    display: block;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.inline-check {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.lang-row {
+    display: flex;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.lang-row .field {
+    flex: 1;
+}
+
